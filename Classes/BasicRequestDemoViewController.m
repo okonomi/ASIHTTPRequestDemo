@@ -21,8 +21,6 @@ enum {
 #pragma mark -
 #pragma mark BasicRequestDemoViewController
 
-@synthesize httpRequest = _httpRequest;
-
 #pragma mark View lifecycle
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -64,10 +62,6 @@ enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.httpRequest = [ASIHTTPRequest requestWithURL:
-                        [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
-    self.httpRequest.delegate = self;
 }
 
 /*
@@ -95,15 +89,17 @@ enum {
 
 
 - (void)dealloc {
-    self.httpRequest = nil;
-
     [super dealloc];
 }
 
 #pragma mark Button action
 
 - (void)onConnectAction:(id)sender {
-    [self.httpRequest startAsynchronous];
+    ASIHTTPRequest *httpRequest = [ASIHTTPRequest requestWithURL:
+                                   [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
+    httpRequest.delegate = self;
+
+    [httpRequest startAsynchronous];
 }
 
 #pragma mark ASIHTTPRequest delegate

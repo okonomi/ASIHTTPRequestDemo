@@ -11,9 +11,7 @@
 
 
 @interface BasicRequestDemoViewController : UIViewController {
-    ASIHTTPRequest *_httpRequest;
-}
 
-@property (nonatomic,retain) ASIHTTPRequest *httpRequest;
+}
 
 @end
