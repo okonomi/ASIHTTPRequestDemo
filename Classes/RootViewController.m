@@ -82,6 +82,7 @@
     }
 
     cell.textLabel.text = [self.listOfContents objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
 }
