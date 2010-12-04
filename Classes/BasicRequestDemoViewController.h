@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequest/ASIHTTPRequest.h"
 
 
 @interface BasicRequestDemoViewController : UIViewController {
-
+    ASIHTTPRequest *_httpRequest;
 }
+
+@property (nonatomic,retain) ASIHTTPRequest *httpRequest;
 
 @end

@@ -339,7 +339,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "${SDKROOT}/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"${SDKROOT}/usr/include/libxml2",
+					Externals,
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
