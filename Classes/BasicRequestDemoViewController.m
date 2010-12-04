@@ -22,6 +22,8 @@ enum {
 #pragma mark -
 #pragma mark BasicRequestDemoViewController
 
+@synthesize progressView = _progressView;
+
 #pragma mark View lifecycle
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -58,6 +60,10 @@ enum {
     [showView.layer setBorderColor:[UIColor grayColor].CGColor];
     showView.tag = ViewTagShow;
     [self.view addSubview:showView];
+    
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progressView.frame = CGRectMake(0, 0, showView.frame.size.width -20, 20);
+    self.progressView.center = CGPointMake(showView.frame.size.width /2, showView.frame.size.height /2);
 }
 
 - (void)viewDidLoad {
@@ -90,7 +96,9 @@ enum {
 
 - (void)dealloc {
     LOG_CURRENT_METHOD;
-    
+
+    self.progressView = nil;
+
     [super dealloc];
 }
 
@@ -103,7 +111,9 @@ enum {
 //                                   [NSURL URLWithString:@"http://www.google.co.jp/hoge"]];
                                    [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
     httpRequest.delegate = self;
-
+    UIView *showView = [self.view viewWithTag:ViewTagShow];
+    [showView addSubview:self.progressView];
+    httpRequest.downloadProgressDelegate = self.progressView;
     [httpRequest startAsynchronous];
 }
 

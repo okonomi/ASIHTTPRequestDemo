@@ -11,7 +11,9 @@
 
 
 @interface BasicRequestDemoViewController : UIViewController {
-
+    UIProgressView *_progressView;
 }
+
+@property (nonatomic,retain) UIProgressView *progressView;
 
 @end
