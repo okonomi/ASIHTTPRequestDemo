@@ -45,7 +45,8 @@ enum {
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(x, y, 100, 40);
-    [button setTitle:@"通信" forState:UIControlStateNormal];
+    [button setTitle:NSLocalizedString(@"Download", @"Button title for download")
+            forState:UIControlStateNormal];
     [button addTarget:self
                action:@selector(onConnectAction:)
      forControlEvents:UIControlEventTouchUpInside];

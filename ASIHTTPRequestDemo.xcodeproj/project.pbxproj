@@ -23,6 +23,7 @@
 		0B003D5E12AA0EA00084FA09 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B003D5D12AA0EA00084FA09 /* libxml2.dylib */; };
 		0B003D6012AA0EA00084FA09 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B003D5F12AA0EA00084FA09 /* libz.dylib */; };
 		0B003D8112AA12410084FA09 /* BasicRequestDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B003D8012AA12410084FA09 /* BasicRequestDemoViewController.m */; };
+		0B003E5A12AA22A70084FA09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B003E5912AA22A70084FA09 /* Localizable.strings */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -65,6 +66,8 @@
 		0B003D5F12AA0EA00084FA09 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0B003D7F12AA12410084FA09 /* BasicRequestDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicRequestDemoViewController.h; sourceTree = "<group>"; };
 		0B003D8012AA12410084FA09 /* BasicRequestDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicRequestDemoViewController.m; sourceTree = "<group>"; };
+		0B003E5712AA22880084FA09 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B003E5B12AA22B50084FA09 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0B003E5912AA22A70084FA09 /* Localizable.strings */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ASIHTTPRequestDemo-Info.plist */,
@@ -274,6 +278,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				0B003E5A12AA22A70084FA09 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +307,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0B003E5912AA22A70084FA09 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B003E5712AA22880084FA09 /* English */,
+				0B003E5B12AA22B50084FA09 /* Japanese */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
