@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "BasicRequestDemoViewController.h"
+#import "ParallelRequestDemoViewController.h"
 #import "RequestQueueDemoViewController.h"
 
 
@@ -25,6 +26,7 @@
 
     self.listOfContents = [NSArray arrayWithObjects:
                            NSLocalizedString(@"Basic Request", @"Title for BasicRequestDemoViewControler"),
+                           NSLocalizedString(@"Parallel Request", @"Title for ParallelRequestDemoViewControler"),
                            NSLocalizedString(@"Request Queue", @"Title for RequestQueueDemoViewControler"),
                            nil];
 }
@@ -143,6 +145,11 @@
             break;
         }
         case 1:
+        {
+            viewController = [[[ParallelRequestDemoViewController alloc] init] autorelease];
+            break;
+        }
+        case 2:
         {
             viewController = [[[RequestQueueDemoViewController alloc] init] autorelease];
             break;

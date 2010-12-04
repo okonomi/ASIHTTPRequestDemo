@@ -25,6 +25,7 @@
 		0B003D8112AA12410084FA09 /* BasicRequestDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B003D8012AA12410084FA09 /* BasicRequestDemoViewController.m */; };
 		0B003E5A12AA22A70084FA09 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B003E5912AA22A70084FA09 /* Localizable.strings */; };
 		0BF9D5CD12AA73FB00889CDC /* RequestQueueDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9D5CC12AA73FB00889CDC /* RequestQueueDemoViewController.m */; };
+		0BF9D5DC12AA784F00889CDC /* ParallelRequestDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9D5DB12AA784F00889CDC /* ParallelRequestDemoViewController.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -72,6 +73,8 @@
 		0B003EB612AA26E70084FA09 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		0BF9D5CB12AA73FB00889CDC /* RequestQueueDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestQueueDemoViewController.h; sourceTree = "<group>"; };
 		0BF9D5CC12AA73FB00889CDC /* RequestQueueDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueueDemoViewController.m; sourceTree = "<group>"; };
+		0BF9D5DA12AA784F00889CDC /* ParallelRequestDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallelRequestDemoViewController.h; sourceTree = "<group>"; };
+		0BF9D5DB12AA784F00889CDC /* ParallelRequestDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallelRequestDemoViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				0B003D7F12AA12410084FA09 /* BasicRequestDemoViewController.h */,
 				0B003D8012AA12410084FA09 /* BasicRequestDemoViewController.m */,
+				0BF9D5DA12AA784F00889CDC /* ParallelRequestDemoViewController.h */,
+				0BF9D5DB12AA784F00889CDC /* ParallelRequestDemoViewController.m */,
 				0BF9D5CB12AA73FB00889CDC /* RequestQueueDemoViewController.h */,
 				0BF9D5CC12AA73FB00889CDC /* RequestQueueDemoViewController.m */,
 			);
@@ -311,6 +316,7 @@
 				0B003D5412AA0E4C0084FA09 /* Reachability.m in Sources */,
 				0B003D8112AA12410084FA09 /* BasicRequestDemoViewController.m in Sources */,
 				0BF9D5CD12AA73FB00889CDC /* RequestQueueDemoViewController.m in Sources */,
+				0BF9D5DC12AA784F00889CDC /* ParallelRequestDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
