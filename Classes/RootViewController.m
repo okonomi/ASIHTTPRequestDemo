@@ -20,10 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"ASIHTTPRequest Demo";
+    self.title = NSLocalizedString(@"ASIHTTPRequest Demo", @"Title for RootViewController");
 
     self.listOfContents = [NSArray arrayWithObjects:
-                           @"Basic Request",
+                           NSLocalizedString(@"Basic Request", @"Title for BasicRequestDemoViewControler"),
                            nil];
 }
 
