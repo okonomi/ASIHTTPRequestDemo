@@ -135,7 +135,10 @@ enum {
 - (void)requestFailed:(ASIHTTPRequest *)request {
     LOG_CURRENT_METHOD;
     
-    //NSError *error = [request error];
+    NSError *error = [request error];
+    if (error != nil) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
 }
 
 @end
