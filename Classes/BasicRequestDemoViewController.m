@@ -101,6 +101,7 @@ enum {
     LOG_CURRENT_METHOD;
     
     ASIHTTPRequest *httpRequest = [ASIHTTPRequest requestWithURL:
+//                                   [NSURL URLWithString:@"http://www.google.co.jp/hoge"]];
                                    [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
     httpRequest.delegate = self;
 
@@ -112,12 +113,20 @@ enum {
 - (void)requestFinished:(ASIHTTPRequest *)request {
     LOG_CURRENT_METHOD;
 
-    NSData *responseData = [request responseData];
+    NSError *error = [request error];
+    if (error != nil) {
+        NSLog(@"%@", [error localizedDescription]);
+    } else {
+        NSLog(@"%d:%@", [request responseStatusCode], [request responseStatusMessage]);
+        if ([request responseStatusCode] / 100 == 2) {
+            NSData *responseData = [request responseData];
 
-    UIImage *image = [UIImage imageWithData:responseData];
+            UIImage *image = [UIImage imageWithData:responseData];
 
-    UIImageView *imageView = (UIImageView *)[self.view viewWithTag:ViewTagImage];
-    imageView.image = image;
+            UIImageView *imageView = (UIImageView *)[self.view viewWithTag:ViewTagImage];
+            imageView.image = image;
+        }
+    }
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
