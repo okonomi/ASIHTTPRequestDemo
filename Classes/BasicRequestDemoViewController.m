@@ -108,13 +108,18 @@ enum {
 
 - (void)onConnectAction:(id)sender {
     LOG_CURRENT_METHOD;
-    
+
+    UIView *showView = [self.view viewWithTag:ViewTagShow];
+    for (UIView *subview in showView.subviews) {
+        [subview removeFromSuperview];
+    }
+    self.progressView.progress = 0.0f;
+    [showView addSubview:self.progressView];
+
     ASIHTTPRequest *httpRequest = [ASIHTTPRequest requestWithURL:
 //                                   [NSURL URLWithString:@"http://www.google.co.jp/hoge"]];
                                    [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
     httpRequest.delegate = self;
-    UIView *showView = [self.view viewWithTag:ViewTagShow];
-    [showView addSubview:self.progressView];
     httpRequest.downloadProgressDelegate = self.progressView;
     [httpRequest startAsynchronous];
 }
