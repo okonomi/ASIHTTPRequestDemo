@@ -6,11 +6,11 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ASIHTTPRequestDemoAppDelegate.h"
+#import "AppDelegate.h"
 #import "RootViewController.h"
 
 
-@implementation ASIHTTPRequestDemoAppDelegate
+@implementation AppDelegate
 
 @synthesize window;
 @synthesize navigationController;

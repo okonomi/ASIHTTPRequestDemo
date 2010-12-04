@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ASIHTTPRequestDemoAppDelegate : NSObject <UIApplicationDelegate> {
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
     
     UIWindow *window;
     UINavigationController *navigationController;
