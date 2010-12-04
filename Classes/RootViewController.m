@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "BasicRequestDemoViewController.h"
+#import "RequestQueueDemoViewController.h"
 
 
 @implementation RootViewController
@@ -24,6 +25,7 @@
 
     self.listOfContents = [NSArray arrayWithObjects:
                            NSLocalizedString(@"Basic Request", @"Title for BasicRequestDemoViewControler"),
+                           NSLocalizedString(@"Request Queue", @"Title for RequestQueueDemoViewControler"),
                            nil];
 }
 
@@ -132,10 +134,27 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BasicRequestDemoViewController *viewController = [[[BasicRequestDemoViewController alloc] init] autorelease];
-    viewController.title = [self.listOfContents objectAtIndex:indexPath.row];
+    UIViewController *viewController = nil;
 
-    [self.navigationController pushViewController:viewController animated:YES];
+    switch (indexPath.row) {
+        case 0:
+        {
+            viewController = [[[BasicRequestDemoViewController alloc] init] autorelease];
+            break;
+        }
+        case 1:
+        {
+            viewController = [[[RequestQueueDemoViewController alloc] init] autorelease];
+            break;
+        }
+        default:
+            break;
+    }
+
+    if (viewController != nil) {
+        viewController.title = [self.listOfContents objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 
