@@ -60,7 +60,6 @@
 }
  */
 
-
 #pragma mark -
 #pragma mark Table view data source
 
@@ -69,12 +68,10 @@
     return 1;
 }
 
-
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.listOfContents.count;
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,7 +128,6 @@
 }
 */
 
-
 #pragma mark -
 #pragma mark Table view delegate
 
@@ -164,7 +160,6 @@
     }
 }
 
-
 #pragma mark -
 #pragma mark Memory management
 
@@ -180,13 +175,11 @@
     // For example: self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     self.listOfContents = nil;
 
     [super dealloc];
 }
-
 
 @end
 

@@ -24,8 +24,6 @@ enum {
 
 @synthesize progressView = _progressView;
 
-#pragma mark View lifecycle
-
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -36,6 +34,8 @@ enum {
     return self;
 }
 */
+
+#pragma mark View lifecycle
 
 - (void)loadView {
     self.view = [[[UIView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
@@ -94,7 +94,6 @@ enum {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
 
 - (void)dealloc {
     LOG_CURRENT_METHOD;
