@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController {
+    NSArray *_listOfContents;
 }
+
+@property (nonatomic,retain) NSArray *listOfContents;
 
 @end

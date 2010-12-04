@@ -11,6 +11,7 @@
 
 @implementation RootViewController
 
+@synthesize listOfContents = _listOfContents;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -19,6 +20,10 @@
     [super viewDidLoad];
 
     self.title = @"ASIHTTPRequest Demo";
+
+    self.listOfContents = [NSArray arrayWithObjects:
+                           @"Basic Request",
+                           nil];
 }
 
 /*
@@ -62,7 +67,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.listOfContents.count;
 }
 
 
@@ -76,7 +81,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	// Configure the cell.
+    cell.textLabel.text = [self.listOfContents objectAtIndex:indexPath.row];
 
     return cell;
 }
