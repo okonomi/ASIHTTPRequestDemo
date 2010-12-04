@@ -133,6 +133,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BasicRequestDemoViewController *viewController = [[[BasicRequestDemoViewController alloc] init] autorelease];
+    viewController.title = [self.listOfContents objectAtIndex:indexPath.row];
 
     [self.navigationController pushViewController:viewController animated:YES];
 }
