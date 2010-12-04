@@ -155,6 +155,8 @@
 
 
 - (void)dealloc {
+    self.listOfContents = nil;
+
     [super dealloc];
 }
 
