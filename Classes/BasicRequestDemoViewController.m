@@ -7,12 +7,23 @@
 //
 
 #import "BasicRequestDemoViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
+
+enum {
+    ViewTagButton = 1,
+    ViewTagImage,
+};
 
 
 @implementation BasicRequestDemoViewController
 
+#pragma mark -
+#pragma mark BasicRequestDemoViewController
+
 @synthesize httpRequest = _httpRequest;
 
+#pragma mark View lifecycle
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -25,18 +36,38 @@
 }
 */
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-}
-*/
+    self.view = [[[UIView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)] autorelease];
+    self.view.backgroundColor = [UIColor lightGrayColor];
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+    NSInteger x = 10, y = 10;
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(x, y, 100, 40);
+    [button setTitle:@"通信" forState:UIControlStateNormal];
+    [button addTarget:self
+               action:@selector(onConnectAction:)
+     forControlEvents:UIControlEventTouchUpInside];
+    button.tag = ViewTagButton;
+    [self.view addSubview:button];
+
+    y += 50;
+    UIImageView *imageView = [[[UIImageView alloc] init] autorelease];
+    imageView.frame = CGRectMake(x, y, 300, 300);
+    [imageView.layer setBorderWidth:1.0f];
+    [imageView.layer setBorderColor:[UIColor grayColor].CGColor];
+    imageView.tag = ViewTagImage;
+    [self.view addSubview:imageView];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.httpRequest = [ASIHTTPRequest requestWithURL:
+                        [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
+    self.httpRequest.delegate = self;
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -45,6 +76,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 */
+
+#pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -61,8 +94,30 @@
 
 
 - (void)dealloc {
+    self.httpRequest = nil;
+
     [super dealloc];
 }
 
+#pragma mark Button action
+
+- (void)onConnectAction:(id)sender {
+    [self.httpRequest startAsynchronous];
+}
+
+#pragma mark ASIHTTPRequest delegate
+
+- (void)requestFinished:(ASIHTTPRequest *)request {
+    NSData *responseData = [request responseData];
+
+    UIImage *image = [UIImage imageWithData:responseData];
+
+    UIImageView *imageView = (UIImageView *)[self.view viewWithTag:ViewTagImage];
+    imageView.image = image;
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request {
+    //NSError *error = [request error];
+}
 
 @end
