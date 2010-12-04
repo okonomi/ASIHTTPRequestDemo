@@ -56,8 +56,10 @@ enum {
 
     y += 50;
     UIView *showView = [[[UIView alloc] initWithFrame:CGRectMake(x, y, 300, 300)] autorelease];
-    [showView.layer setBorderWidth:1.0f];
-    [showView.layer setBorderColor:[UIColor grayColor].CGColor];
+    showView.layer.borderWidth = 1.0f;
+    showView.layer.borderColor = [UIColor grayColor].CGColor;
+    showView.layer.cornerRadius = 10;
+    showView.clipsToBounds = true;
     showView.tag = ViewTagShow;
     [self.view addSubview:showView];
     
