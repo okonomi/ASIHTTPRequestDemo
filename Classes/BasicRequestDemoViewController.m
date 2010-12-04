@@ -128,15 +128,20 @@ enum {
     } else {
         NSLog(@"%d:%@", [request responseStatusCode], [request responseStatusMessage]);
         if ([request responseStatusCode] / 100 == 2) {
-            NSData *responseData = [request responseData];
-
-            UIImage *image = [UIImage imageWithData:responseData];
-            UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
-
             UIView *showView = [self.view viewWithTag:ViewTagShow];
             for (UIView *subview in showView.subviews) {
                 [subview removeFromSuperview];
             }
+
+            NSData *responseData = [request responseData];
+            UIImage *image = [UIImage imageWithData:responseData];
+
+            UIImageView *imageView = [[[UIImageView alloc]
+                                       initWithFrame:CGRectMake(0, 0, showView.frame.size.width, showView.frame.size.height)]
+                                      autorelease];
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            imageView.image = image;
+
             [showView addSubview:imageView];
         }
     }
