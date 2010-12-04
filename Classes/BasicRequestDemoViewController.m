@@ -13,7 +13,7 @@
 
 enum {
     ViewTagButton = 1,
-    ViewTagImage,
+    ViewTagShow,
 };
 
 
@@ -53,12 +53,11 @@ enum {
     [self.view addSubview:button];
 
     y += 50;
-    UIImageView *imageView = [[[UIImageView alloc] init] autorelease];
-    imageView.frame = CGRectMake(x, y, 300, 300);
-    [imageView.layer setBorderWidth:1.0f];
-    [imageView.layer setBorderColor:[UIColor grayColor].CGColor];
-    imageView.tag = ViewTagImage;
-    [self.view addSubview:imageView];
+    UIView *showView = [[[UIView alloc] initWithFrame:CGRectMake(x, y, 300, 300)] autorelease];
+    [showView.layer setBorderWidth:1.0f];
+    [showView.layer setBorderColor:[UIColor grayColor].CGColor];
+    showView.tag = ViewTagShow;
+    [self.view addSubview:showView];
 }
 
 - (void)viewDidLoad {
@@ -122,9 +121,13 @@ enum {
             NSData *responseData = [request responseData];
 
             UIImage *image = [UIImage imageWithData:responseData];
+            UIImageView *imageView = [[[UIImageView alloc] initWithImage:image] autorelease];
 
-            UIImageView *imageView = (UIImageView *)[self.view viewWithTag:ViewTagImage];
-            imageView.image = image;
+            UIView *showView = [self.view viewWithTag:ViewTagShow];
+            for (UIView *subview in showView.subviews) {
+                [subview removeFromSuperview];
+            }
+            [showView addSubview:imageView];
         }
     }
 }
