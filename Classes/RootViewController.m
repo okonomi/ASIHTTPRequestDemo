@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "BasicRequestDemoViewController.h"
 
 
 @implementation RootViewController
@@ -131,14 +132,9 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+    BasicRequestDemoViewController *viewController = [[[BasicRequestDemoViewController alloc] init] autorelease];
+
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 
