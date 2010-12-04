@@ -8,6 +8,7 @@
 
 #import "BasicRequestDemoViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Defines.h"
 
 
 enum {
@@ -89,12 +90,16 @@ enum {
 
 
 - (void)dealloc {
+    LOG_CURRENT_METHOD;
+    
     [super dealloc];
 }
 
 #pragma mark Button action
 
 - (void)onConnectAction:(id)sender {
+    LOG_CURRENT_METHOD;
+    
     ASIHTTPRequest *httpRequest = [ASIHTTPRequest requestWithURL:
                                    [NSURL URLWithString:@"http://macintoshuser.up.seesaa.net/image/steve-jobs_06.jpg"]];
     httpRequest.delegate = self;
@@ -105,6 +110,8 @@ enum {
 #pragma mark ASIHTTPRequest delegate
 
 - (void)requestFinished:(ASIHTTPRequest *)request {
+    LOG_CURRENT_METHOD;
+
     NSData *responseData = [request responseData];
 
     UIImage *image = [UIImage imageWithData:responseData];
@@ -114,6 +121,8 @@ enum {
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request {
+    LOG_CURRENT_METHOD;
+    
     //NSError *error = [request error];
 }
 
