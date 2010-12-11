@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIHTTPRequest/ASIHTTPRequest.h"
+#import "ASIHTTPRequest.h"
 
 
 @interface BasicRequestDemoViewController : UIViewController {
